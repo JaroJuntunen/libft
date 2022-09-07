@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   values_abs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuntune <jjuntune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 13:25:34 by jjuntune          #+#    #+#             */
-/*   Updated: 2022/03/15 14:23:33 by jjuntune         ###   ########.fr       */
+/*   Created: 2022/04/27 14:30:19 by jjuntune          #+#    #+#             */
+/*   Updated: 2022/04/27 19:05:37 by jjuntune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+double	values_abs(double i)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && i < n - 1)
-		i++;
-	if (s1[i] == s2[i])
-		return (1);
-	else
-		return (0);
+	if (i < 0)
+		i *= -1.0;
+	return (i);
 }

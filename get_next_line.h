@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjuntune <jjuntune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 13:25:34 by jjuntune          #+#    #+#             */
-/*   Updated: 2022/03/15 14:23:33 by jjuntune         ###   ########.fr       */
+/*   Created: 2022/01/03 13:09:39 by jjuntune          #+#    #+#             */
+/*   Updated: 2022/04/27 14:34:28 by jjuntune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
-{
-	size_t	i;
+# include "libft.h"
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && i < n - 1)
-		i++;
-	if (s1[i] == s2[i])
-		return (1);
-	else
-		return (0);
-}
+# define BUFF_SIZE 8
+# define FD_MAX 10240
+
+int	get_next_line(const int fd, char **line);
+#endif
